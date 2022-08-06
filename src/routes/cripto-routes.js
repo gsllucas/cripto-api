@@ -8,6 +8,7 @@ router.post('/', async (req, res) => {
 
   if (!cripto.name) {
     res.status(422).send({ error: 'Cripto not found!' });
+    return;
   }
 
   try {

@@ -9,11 +9,14 @@ const cripto = {
   type: String,
   watchListCount: Number,
   isFavorite: Boolean,
-  scenarios: [{
-    scenario: String,
-    value: String,
-    rate: String,
-  }],
+  graph: String,
+  scenarios: [
+    {
+      scenario: String,
+      value: String,
+      rate: String,
+    },
+  ],
 };
 
 const Cripto = mongoose.model('Cripto', cripto);

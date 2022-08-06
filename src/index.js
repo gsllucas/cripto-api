@@ -15,11 +15,14 @@ app.use('/cripto', routes);
 
 // initial route
 app.get('/', (req, res) => {
-  res.json({ message: "Hello World" });
+  res.json({ message: 'Hello World' });
 });
 
 const DB_USER = process.env.DB_USER;
 const DB_PASSWORD = process.env.DB_PASSWORD;
+
+console.log(DB_USER);
+console.log(DB_PASSWORD);
 
 // set a port
 mongoose.connect(`mongodb+srv://${DB_USER}:${DB_PASSWORD}@cripto-cluster.v6zh5f1.mongodb.net/?retryWrites=true&w=majority`)

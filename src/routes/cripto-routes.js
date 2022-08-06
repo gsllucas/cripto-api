@@ -6,7 +6,7 @@ router.post('/', async (req, res) => {
   // treat body from request
   const cripto = req.body;
 
-  if (!name) {
+  if (!cripto.name) {
     res.status(422).send({ error: 'Cripto not found!' });
   }
 

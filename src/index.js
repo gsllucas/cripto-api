@@ -11,7 +11,7 @@ app.use(express.json()); // middleware
 
 const routes = require('./routes/cripto-routes');
 
-app.use('/cripto', routes);
+app.use('/criptos', routes);
 
 // initial route
 app.get('/', (req, res) => {

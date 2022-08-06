@@ -4,17 +4,16 @@ const Cripto = require('../models/Cripto');
 // post route
 router.post('/', async (req, res) => {
   // treat body from request
-  const { name, tag, currencyValue, lastRate, rank, type, watchListCount, isFavorite } = req.body;
   const cripto = req.body;
 
   if (!name) {
-    res.status(422).send({ error: "Cripto not found!" });
+    res.status(422).send({ error: 'Cripto not found!' });
   }
-  
+
   try {
     // create cripto with moongose
     await Cripto.create(cripto);
-    res.status(201).json({ message: "Cripto created!" });
+    res.status(201).json({ message: 'Cripto created!' });
   } catch (error) {
     res.status(500).json({ error: error });
   }

@@ -21,12 +21,15 @@ app.get('/', (req, res) => {
 const DB_USER = process.env.DB_USER;
 const DB_PASSWORD = process.env.DB_PASSWORD;
 
-console.log(DB_USER);
-console.log(DB_PASSWORD);
-
 // set a port
-mongoose.connect(`mongodb+srv://${DB_USER}:${DB_PASSWORD}@cripto-cluster.v6zh5f1.mongodb.net/?retryWrites=true&w=majority`)
-.then(() => { app.listen(3000); console.log('Connection Stablished'); })
-.catch((connectionError) => console.log(connectionError));
+mongoose
+  .connect(
+    `mongodb+srv://${DB_USER}:${DB_PASSWORD}@cripto-cluster.v6zh5f1.mongodb.net/?retryWrites=true&w=majority`
+  )
+  .then(() => {
+    app.listen(process.env.PORT || 3000);
+    console.log('Connection Stablished');
+  })
+  .catch((connectionError) => console.log(connectionError));
 
 // mongodb+srv://cripto-user:cripto123@cripto-cluster.v6zh5f1.mongodb.net/?retryWrites=true&w=majority

@@ -29,7 +29,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(cors());
+app.use(cors({ origin: '*' }));
 
 // initial route
 app.get('/', (req, res) => {

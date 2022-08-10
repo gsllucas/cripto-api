@@ -12,7 +12,10 @@ app.use(express.json()); // middleware
 const routes = require('./routes/cripto-routes');
 
 app.use('/criptos', routes);
-app.use(cors({ origin: '*' }));
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  next();
+});
 
 // initial route
 app.get('/', (req, res) => {

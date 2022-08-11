@@ -39,5 +39,3 @@ mongoose
     console.log('Connection Stablished');
   })
   .catch((connectionError) => console.log(connectionError));
-
-// mongodb+srv://cripto-user:cripto123@cripto-cluster.v6zh5f1.mongodb.net/?retryWrites=true&w=majority
